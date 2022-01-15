@@ -11,6 +11,8 @@ import Account from "components/Account";
 import Chains from "components/Chains";
 import NFTBalance from "components/NFTBalance";
 import NFTTokenIds from "components/NFTTokenIds";
+import Profile from "components/Profile";
+import PostBounty from "components/PostBounty";
 import { Menu, Layout} from "antd";
 import SearchCollections from "components/SearchCollections";
 import "antd/dist/antd.css";
@@ -82,13 +84,19 @@ const App = ({ isServerInfo }) => {
             defaultSelectedKeys={["nftMarket"]}
           >
             <Menu.Item key="nftMarket" onClick={() => setInputValue("explore")} >
-              <NavLink to="/NFTMarketPlace">🛒 Explore Market</NavLink>
+              <NavLink to="/NFTMarketPlace">Explore Market</NavLink>
             </Menu.Item>
             <Menu.Item key="nft">
-              <NavLink to="/nftBalance">🖼 Your Collection</NavLink>
+              <NavLink to="/nftBalance">Your Collection</NavLink>
             </Menu.Item>
             <Menu.Item key="transactions">
-              <NavLink to="/Transactions">📑 Your Transactions</NavLink>
+              <NavLink to="/Transactions">Your Transactions</NavLink>
+            </Menu.Item>
+            <Menu.Item key="postBounty">
+              <NavLink to="/postBounty">Post Bounty</NavLink>
+            </Menu.Item>
+            <Menu.Item key="profile">
+              <NavLink to="/profile">My Profile</NavLink>
             </Menu.Item>
           </Menu>
           <div style={styles.headerRight}>
@@ -107,6 +115,12 @@ const App = ({ isServerInfo }) => {
             </Route>
             <Route path="/Transactions">
               <NFTMarketTransactions />
+            </Route>
+            <Route path="/postBounty">
+              <PostBounty />
+            </Route>
+            <Route path="/profile">
+              <Profile />
             </Route>
           </Switch>
           <Redirect to="/NFTMarketPlace" />
