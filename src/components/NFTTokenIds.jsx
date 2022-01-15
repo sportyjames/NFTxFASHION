@@ -302,7 +302,9 @@ function NFTTokenIds({ inputValue, setInputValue }) {
                 }
                 key={index}
               >
-                <Meta title={nft.name} />
+                
+                NFT Name: <Meta title={nft.name} />
+                NFT Holder: <Meta title= {nft.nftholder} />
               </Card>
             ))}
 
