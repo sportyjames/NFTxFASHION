@@ -16,7 +16,10 @@ import {
 import { useMoralisDapp } from "providers/MoralisDappProvider/MoralisDappProvider";
 import { getExplorer } from "helpers/networks";
 import { useWeb3ExecuteFunction } from "react-moralis";
+import Filter from './Filter';
+import '../App.css';
 const { Meta } = Card;
+
 
 const styles = {
   NFTs: {
@@ -170,6 +173,7 @@ function NFTTokenIds({ inputValue, setInputValue }) {
 
   return (
     <>
+      <Filter collections={NFTCollections}/>
       <div>
         {contractABIJson.noContractDeployed && (
           <>
