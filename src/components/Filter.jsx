@@ -18,6 +18,18 @@ import {
   } from "@material-ui/core";
 import '../App.css'
 
+// const collections = [
+//     {
+//       name: "movie 0",
+//       app: "metaverse"
+//     },
+//     {
+//       title: "movie 1",
+//       app: "merchandise"
+//     }
+//   ];
+
+
 const NFT = [
     { app: "metaverse" },
     { app: "merchandise" },
@@ -29,6 +41,7 @@ const Filter = (props) => {
 
     const [app, setApp] = useState([]);
     const [filteredApp, setFilteredApp] = useState([]);
+    const {collections} = props
 
     const handleChange = e => {
         if (e.target.checked) {
@@ -40,10 +53,10 @@ const Filter = (props) => {
 
     useEffect(() => {
         if (app.length === 0) {
-          setFilteredApp(props.collections);
+          setFilteredApp(collections);
         } else {
           setFilteredApp(
-            props.collections.filter(nft =>
+            collections.filter(nft =>
               app.some(category => [nft.app].flat().includes(category))
             )
           );
@@ -52,10 +65,13 @@ const Filter = (props) => {
 
     return (
         // <div className="Filter"> 
-           
+        
+        
         // </div>
         <Fragment>
-            <TextField value={app} fullWidth onChange={handleChange} />
+            {/* {console.log(props.collections)} */}
+            {console.log(collections)}
+            {/* <TextField value={app} fullWidth onChange={handleChange} /> */}
             <FormControl>
                 <FormGroup>
                 {NFT.map(nft => (
