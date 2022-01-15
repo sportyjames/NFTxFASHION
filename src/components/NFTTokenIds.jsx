@@ -69,6 +69,10 @@ const styles = {
 const NFT = [
   { app: "metaverse" },
   { app: "merchandise" },
+  { app: "clothes" },
+  { app: "pants" },
+  { app: "sneakers" },
+  { app: "accessories" },
 ];
 
 
