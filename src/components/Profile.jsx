@@ -1,15 +1,30 @@
 import React from 'react'
+import { useState } from 'react';
+import { useMoralis } from 'react-moralis';
 import Grid from "@material-ui/core/Grid";
 import { Container, Typography, Button, TextField, Checkbox } from "@material-ui/core";
 import ImageListExample from "../components/Custom/ImageListExample";
 import FormControlLabel from '@mui/material/FormControlLabel';
+import { useMoralisDapp } from "providers/MoralisDappProvider/MoralisDappProvider";
 
 const Profile = () => {
+  const {user} = useMoralis()
+  const { walletAddress, chainId } = useMoralisDapp();
+
+  const [username, setUsername] = useState(user.attributes.username)
+  const [email, setEmail] = useState(user.attributes.email)
+  const [website, setWebsite] = useState(user.attributes.website)
+  const [description, setDescription] = useState(user.attributes.description)
+  const [designer, setDesigner] = useState(user.attributes.designer)
+
+ 
+
     return (
+    
     <Container>
       <Grid container direction={"row"} spacing={8}>
         <Grid item xs={6}>
-          <MainContent />
+          <MainContent name = {username} address={walletAddress}/>
         </Grid>
         <Grid item xs={6}>
           <SideContent />
@@ -19,17 +34,17 @@ const Profile = () => {
     )
 }
 
-const MainContent = () => {
+const MainContent = ({name, address}) => {
   return (
     <Grid container direction={"column"} spacing={4}>
       <Grid item>
         <Section title={"Your Wallet Address"}>
-          <TextField id="outlined-basic" label="" variant="outlined" fullWidth />
+          <TextField id="outlined-basic" value={address} variant="outlined" fullWidth />
         </Section>
       </Grid>
       <Grid item>
         <Section title={"Display Name"}>
-          <TextField id="outlined-basic" label="" variant="outlined" fullWidth />
+          <TextField id="outlined-basic" value={name} variant="outlined" fullWidth />
         </Section>
       </Grid>
       <Grid item>
