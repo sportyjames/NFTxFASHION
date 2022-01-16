@@ -65,6 +65,10 @@ const App = ({ isServerInfo }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isAuthenticated, isWeb3Enabled]);
 
+
+  // if(isAuthenticated) console.log("hahah")
+
+
   return (
     <Layout style={{ height: "100vh", overflow: "auto" }}>
       <Router>
@@ -86,18 +90,26 @@ const App = ({ isServerInfo }) => {
             <Menu.Item key="nftMarket" onClick={() => setInputValue("explore")} >
               <NavLink to="/NFTMarketPlace">Explore Market</NavLink>
             </Menu.Item>
-            <Menu.Item key="nft">
-              <NavLink to="/nftBalance">My Collection</NavLink>
-            </Menu.Item>
-            <Menu.Item key="transactions">
-              <NavLink to="/Transactions">My Transactions</NavLink>
-            </Menu.Item>
-            <Menu.Item key="postBounty">
-              <NavLink to="/postBounty">Post Bounty</NavLink>
-            </Menu.Item>
-            <Menu.Item key="profile">
-              <NavLink to="/profile">My Profile</NavLink>
-            </Menu.Item>
+            {isAuthenticated &&
+              <Menu.Item key="nft">
+                <NavLink to="/nftBalance">My Collection</NavLink>
+              </Menu.Item>
+            } 
+            {isAuthenticated &&
+              <Menu.Item key="transactions">
+                <NavLink to="/Transactions">My Transactions</NavLink>
+              </Menu.Item>
+            }
+            {isAuthenticated &&
+              <Menu.Item key="postBounty">
+                <NavLink to="/postBounty">Post Bounty</NavLink>
+              </Menu.Item>
+            }   
+            {isAuthenticated &&
+              <Menu.Item key="profile">
+                 <NavLink to="/profile">My Profile</NavLink>
+              </Menu.Item>
+            }
           </Menu>
           <div style={styles.headerRight}>
             <Chains />

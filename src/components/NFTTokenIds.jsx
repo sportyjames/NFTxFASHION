@@ -316,7 +316,7 @@ function NFTTokenIds({ inputValue, setInputValue }) {
                       }
                     />
                   </Tooltip>,
-                  <Tooltip title="Buy NFT">
+                  <Tooltip title="Choose this NFT for design">
                     <ShoppingCartOutlined onClick={() => handleBuyClick(nft)} />
                   </Tooltip>,
                 ]}
@@ -341,7 +341,7 @@ function NFTTokenIds({ inputValue, setInputValue }) {
         </div>
         {getMarketItem(nftToBuy) ? (
           <Modal
-            title={`Buy ${nftToBuy?.name} #${nftToBuy?.token_id}`}
+            title={`Design ${nftToBuy?.name} #${nftToBuy?.token_id}`}
             visible={visible}
             onCancel={() => setVisibility(false)}
             onOk={() => purchase()}
@@ -374,7 +374,7 @@ function NFTTokenIds({ inputValue, setInputValue }) {
           </Modal>
         ) : (
           <Modal
-            title={`Buy ${nftToBuy?.name} #${nftToBuy?.token_id}`}
+            title={`Design ${nftToBuy?.name} #${nftToBuy?.token_id}`}
             visible={visible}
             onCancel={() => setVisibility(false)}
             onOk={() => setVisibility(false)}
@@ -389,7 +389,7 @@ function NFTTokenIds({ inputValue, setInputValue }) {
               }}
             />
             <Alert
-              message="This NFT is currently not for sale"
+              message="This NFT is currently not for design"
               type="warning"
             />
           </Modal>

@@ -47,11 +47,11 @@ const menuItems = [
   //   value: "Kovan Testnet",
   //   icon: <ETHLogo />,
   // },
-  // {
-  //   key: "0x5",
-  //   value: "Goerli Testnet",
-  //   icon: <ETHLogo />,
-  // },
+  {
+    key: "0x5",
+    value: "Goerli Testnet",
+    icon: <ETHLogo />,
+  },
   // {
   //   key: "0x38",
   //   value: "Binance",

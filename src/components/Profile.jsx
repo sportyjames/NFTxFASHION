@@ -38,7 +38,7 @@ const MainContent = () => {
         </Section>
       </Grid>
       <Grid item>
-        <Section title={"Pricing"}>
+        <Section title={"Personal Webpage"}>
           <TextField id="outlined-basic" label="" variant="outlined" fullWidth/>
         </Section>
       </Grid>
