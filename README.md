@@ -1,6 +1,6 @@
-# `ethereum-boilerplate-NFT-Marketplace`
+# `NFTxFASHION`
 
-This Project is a fork of Ethereum Boilerplate and demostrates how you can build your own NFT Marketplace. This project of course work on any EVM-compatible blockchain such as Polygon, Avalanche, Binance Smart Chain and other such chains.
+A NFT marketplace which bridges the nft holder and designer. The nft holder want to tell people that he/she owns the NFT by including NFTs on fashions (virtual fashion or physical fashion). For example, sneakers. If it is virtual fashion, designer can add the NFT to a computer generated sneaker design and the final sneaker design can be used in metaverse. If it is physical fashion, designer can finish the design and manufacture the sneaker to be worn in real life. The marketplace is similar to fiverr where both nft holder can send posts about his needs and designer can send posts about their skills. The marketplace will profit by charging the commission fee.
 
 ![Preview](preview.gif)
 
