@@ -211,9 +211,8 @@ function NFTTokenIds({ inputValue, setInputValue }) {
 
   return (
     <>
-      <div>
-      {/* <Filter collections={NFTCollections}/> */}
-      <FormControl>
+            <FormControl>
+                <h2>Filter</h2> 
                 <FormGroup>
                 {NFT.map(nft => (
                     <FormControlLabel
@@ -224,6 +223,19 @@ function NFTTokenIds({ inputValue, setInputValue }) {
                 ))}
                 </FormGroup>
       </FormControl>
+      <div>
+      {/* <Filter collections={NFTCollections}/> */}
+      {/* <FormControl>
+                <FormGroup>
+                {NFT.map(nft => (
+                    <FormControlLabel
+                    control={<Checkbox onChange={handleChange} />}
+                    label={nft.app}
+                    value={nft.app}
+                    />
+                ))}
+                </FormGroup>
+      </FormControl> */}
 
         {contractABIJson.noContractDeployed && (
           <>
