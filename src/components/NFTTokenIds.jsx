@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { getNativeByChain } from "helpers/networks";
 import { getCollectionsByChain } from "helpers/collections";
 import {
@@ -16,7 +16,6 @@ import {
 import { useMoralisDapp } from "providers/MoralisDappProvider/MoralisDappProvider";
 import { getExplorer } from "helpers/networks";
 import { useWeb3ExecuteFunction } from "react-moralis";
-import Filter from './Filter';
 import '../App.css';
 import {
   FormControl,
@@ -109,8 +108,8 @@ function NFTTokenIds({ inputValue, setInputValue }) {
 
 
   const [app, setApp] = useState([]);
-  const [filteredApp, setFilteredApp] = useState([]);
-  // const {collections} = props
+  // const [filteredApp, setFilteredApp] = useState([]);
+ 
 
   const handleChange = e => {
     if (e.target.checked) {
@@ -120,17 +119,11 @@ function NFTTokenIds({ inputValue, setInputValue }) {
     }
   };
 
-  useEffect(() => {
-    if (app.length === 0) {
-      setFilteredApp(NFTCollections);
-    } else {
-      setFilteredApp(
-        NFTCollections.filter(nft =>
-          app.some(category => [nft.app].flat().includes(category))
-        )
-      );
-    }
-  }, [app]);
+
+  const filteredApp = useMemo(()=> {
+    if (app.length === 0) return NFTCollections;
+    return app.reduce((filteredData, appElem) => filteredData.filter((elem) => elem.app.includes(appElem)), NFTCollections);
+  }, [app])
 
 
 

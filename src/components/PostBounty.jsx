@@ -3,7 +3,7 @@ import Grid from "@material-ui/core/Grid";
 import { Container, Typography, Button, TextField } from "@material-ui/core";
 import ImageListExample from "../components/Custom/ImageListExample";
 
-const PostBounty = ({}) => {
+const PostBounty = ({ }) => {
   return (
     <Container>
       <Grid container direction={"row"} spacing={2}>
